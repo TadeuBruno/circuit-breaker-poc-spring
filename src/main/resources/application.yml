@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: client-service
+
+services:
+  product:
+    url: http://localhost:8081
+
+resilience4j.circuitbreaker:
+  instances:
+    clientCB:
+      minimumNumberOfCalls: 4
+      slidingWindowSize: 8
